@@ -13,9 +13,11 @@
 
     <div class="container mt-3">
         <h1 class="text-center">STUDENTS</h1>
+
+        {{ $slot }}
     </div>
 
-    {{ $slot }}
+   
 
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
