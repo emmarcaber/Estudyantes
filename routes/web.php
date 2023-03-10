@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function() {
-    return 'I am running';
+    return 'I am running...';
 });
 
-Route::get('/students', function () {
-    
-});
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
