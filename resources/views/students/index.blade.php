@@ -30,10 +30,16 @@
                                 <i class="fas fa-edit"></i>
                                 Edit
                             </a>
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                                Delete
-                            </button>
+
+                            <form action="{{ route('students.destroy', $student->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
