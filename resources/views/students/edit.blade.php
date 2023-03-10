@@ -1,7 +1,8 @@
 <x-layout :heading="$heading">
     <div class="w-50 container-md mt-5">
-        <form method="POST" action="{{ route('students.store') }}">
+        <form method="POST" action="{{ route('students.update', $student->id) }}">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Ex. Juan Dela Cruz" value="{{ $student->name }}">
