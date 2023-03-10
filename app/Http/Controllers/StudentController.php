@@ -35,4 +35,12 @@ class StudentController extends Controller
 
         return redirect('/')->with('message', 'Student created successfully!');
     }
+
+    // Show edit student form
+    public function edit(Student $student) {
+        return view('students.edit', [
+            'heading' => 'Edit Estudyante',
+            'student' => $student
+        ]);
+    }
 }
