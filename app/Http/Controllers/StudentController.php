@@ -10,7 +10,7 @@ class StudentController extends Controller
     // Show all students
     public function index() {
         return view('students.index' , [
-            'heading' => 'ESTUDYANTES',
+            'heading' => 'Estudyantes',
             'students' => Student::latest()->get()
         ]);
     }
@@ -18,7 +18,21 @@ class StudentController extends Controller
     // Show create student form
     public function create() {
         return view('students.create', [
-            'heading' => 'Create Estudyante'
+            'heading' => 'Add Estudyante'
         ]);
+    }
+
+    // Store student data
+    public function store(Request $request) {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'course' => 'required',
+            'email' => ['required', 'email'],
+            'gender' => 'required'
+        ]);
+
+        Student::create($formFields);
+
+        return redirect('/')->with('message', 'Student created successfully!');
     }
 }
