@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('course');
-            $table->integer('year');
-            $table->string('section');
+            $table->string('email');
+            $table->enum('gender', ['Male', 'Female', 'Others']);
             $table->timestamps();
         });
     }
