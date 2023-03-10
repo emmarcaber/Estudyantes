@@ -9,6 +9,7 @@
     <title>{{ $heading }}</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
         {{ $slot }}
     </div>
 
-
+    <x-flash-message />
 
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
