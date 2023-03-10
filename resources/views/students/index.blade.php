@@ -26,10 +26,10 @@
                         <td>{{ $student->email }}</td>
                         <td>{{ $student->gender }}</td>
                         <td>
-                            <button class="btn btn-warning">
+                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning">
                                 <i class="fas fa-edit"></i>
                                 Edit
-                            </button>
+                            </a>
                             <button class="btn btn-danger">
                                 <i class="fas fa-trash"></i>
                                 Delete
