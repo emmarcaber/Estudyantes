@@ -7,7 +7,7 @@
             </button>
         </div>
 
-        <table class="table table-striped mt-3">
+        <table class="table table-bordered text-center mt-3">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -19,7 +19,7 @@
 
                 @foreach ($students as $student)
                 <tr>
-                    <td>{{ $student->name }}</td>
+                    <td class="text-start">{{ $student->name }}</td>
                     <td>{{ $student->course }}</td>
                     <td>{{ $student->email }}</td>
                     <td>{{ $student->gender }}</td>
