@@ -1,5 +1,5 @@
 <x-layout :heading="$heading">
-    <div class="row">
+    <div class="row mb-3">
         <div class="text-end">
             <a href="{{ route('students.create') }}">
                 <button class="btn btn-success">
