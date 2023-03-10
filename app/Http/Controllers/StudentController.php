@@ -33,7 +33,7 @@ class StudentController extends Controller
 
         Student::create($formFields);
 
-        return redirect('/')->with('message', 'Student created successfully!');
+        return redirect(route('students.index'))->with('message', 'Student created successfully!');
     }
 
     // Show edit student form
@@ -55,11 +55,11 @@ class StudentController extends Controller
 
         $student->update($formFields);
 
-        return redirect('/')->with('message', 'Student edited successfully!');
+        return redirect(route('students.index'))->with('message', 'Student edited successfully!');
     }
 
     public function destroy(Student $student) {
         $student->delete();
-        return redirect('/')->with('message', 'Student deleted successfully!');
+        return redirect(route('students.index'))->with('message', 'Student deleted successfully!');
     }
 }
