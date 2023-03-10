@@ -43,4 +43,23 @@ class StudentController extends Controller
             'student' => $student
         ]);
     }
+
+    // Edit student
+    public function update(Request $request, Student $student) {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'course' => 'required',
+            'email' => ['required', 'email'],
+            'gender' => 'required'
+        ]);
+
+        $student->update($formFields);
+
+        return redirect('/')->with('message', 'Student edited successfully!');
+    }
+
+    public function destroy(Student $student) {
+        $student->delete();
+        return redirect('/')->with('message', 'Student deleted successfully!');
+    }
 }
