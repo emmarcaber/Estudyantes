@@ -1,6 +1,6 @@
 <x-layout :heading="$heading">
-    <div class="w-50 container mt-5">
-        <form method="POST">
+    <div class="w-50 container-md mt-5">
+        <form method="POST" action="{{ route('students.store') }}">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -31,7 +31,11 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Add</button>
+                
+                <a href="/" class="btn btn-secondary">Back</a>
+            </div>
         </form>
     </div>
 </x-layout>
