@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [StudentController::class, 'index'])->name('students.index');
+Route::get('/', function(){
+    return redirect('/students');
+});
+
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
 
