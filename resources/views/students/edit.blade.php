@@ -45,9 +45,8 @@
             </div>
 
             <div class="mb-3">
+                <a href="{{ route('students.index') }}" class="btn btn-secondary">Back</a>
                 <button type="submit" class="btn btn-warning">Edit</button>
-
-                <a href="/" class="btn btn-secondary">Back</a>
             </div>
         </form>
     </div>
